@@ -2,11 +2,13 @@ import json
 
 
 def load_data(filepath):
-    pass
+    with open(filepath, 'r') as f:
+        data = json.load(f, encoding='utf-8')
+    return data
 
 
 def pretty_print_json(data):
-    pass
+    return json.dumps(data, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':
