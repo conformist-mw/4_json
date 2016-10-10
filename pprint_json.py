@@ -1,4 +1,5 @@
 import json
+import argparse
 
 
 def load_data(filepath):
@@ -12,4 +13,9 @@ def pretty_print_json(data):
 
 
 if __name__ == '__main__':
-    pass
+    parser = argparse.ArgumentParser(
+        description='Выводит содержимое файла json в удобном формате')
+    parser.add_argument('filepath', help='укажите файл в формате json')
+    args = parser.parse_args()
+    data = load_data(args.filepath)
+    print(pretty_print_json(data))
